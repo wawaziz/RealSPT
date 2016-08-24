@@ -1,0 +1,108 @@
+<div data-role="view" data-title="Sign Up" data-model="app.demoService.viewModel" data-init="app.signup.onInit" data-show="app.signup.onShow" data-after-show="app.signup.afterShow">
+    <div data-content-height="100%">
+        <form id="formSignup" style="text-align:center;">
+            <a onclick="history.back();" id="buttonLanding" style="position:absolute;top:30px;left:10px;color:#009FE3;"><i class="fa fa-chevron-left fa-lg" aria-hidden="true"></i></a>
+
+            <div style="width:100%;margin-top:50px;">
+                <img src="images/logo.png" style="width:75px;height:75px;background-color:rgba(0,0,0,0);margin-right:8px;" />
+                <span style="text-align:left;font-size:20px;text-transform:uppercase;line-height:30px;color:#A3A3A2;"> SportPal</span>
+            </div>
+            <div class="signupEmail">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                    <input class="form-control" id="sufullname" name="Fullname" type="text" placeholder="Full name">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                    <input class="form-control" id="suemail" name="Email" type="email" placeholder="Email address">
+                </div>
+                <div class="input-group" style="margin-bottom:10px;">
+                    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                    <input class="form-control" id="supassword" name="Password" type="password" placeholder="Password">
+                </div>
+                <!--<div class="alert alert-warning" id="signinClickError" style="display:none;width:80%;margin:0 auto;margin-bottom:10px;">
+                    <strong>Warning!</strong>Email address and Password are required.
+                </div>-->
+                <a class="btn btn-danger" style="background-color:#34A853;border-color:#34A853;color:white;width:80%;"
+                   href="components/home/search.html" data-role="button" data-animated="true" data-click="signup">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>  Sign up
+                </a>
+            </div>
+            <div style="width:100%;margin:0 auto;margin-bottom:40px;">
+                <hr style="width:80%;border-top: 1px solid #8c8b8b;border-bottom: 1px solid #fff;" />
+            </div>
+            <div class="authSocial">
+                <a data-role="button" data-bind="click: dataFromFacebook" class="btn btn-block btn-social btn-facebook" style="background-color:#3B5998;color:white;">
+                    <span class="fa fa-facebook"></span> Facebook
+                </a>
+                <a data-role="button" data-bind="click: dataFromGoogle" class="btn btn-block btn-social btn-google" style="background-color:#DD4B39;color:white;">
+                    <span class="fa fa-google"></span> Google
+                </a>
+                <a data-role="button" data-bind="click: dataFromTwitter" class="btn btn-block btn-social btn-twitter" style="background-color:#55ACEE;color:white;">
+                    <span class="fa fa-twitter"></span> Twitter
+                </a>
+            </div>
+            <!--<div style="margin-top:10px;margin-bottom:10px;">
+                <img src="images/logo.png" style="width:75px;height:75px;background-color:#fff;padding:10px;" />
+                <a href="components/landing/1.html" data-role="button" data-animated="true" data-icon="home" style="position:absolute;top:10px;left:10px;"></a>
+                <span style="display:block;text-align:center;font-size:20px;text-transform: uppercase;line-height:30px;color:#009FE3;"> SportPal</span>
+            </div>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label class="km-required km-label-above">
+                        Full name
+                        <input id="sufullname" name="Fullname" type="text" placeholder="" required />
+                    </label>
+                </li>
+                <li>
+                    <label class="km-required km-label-above">
+                        Email Address
+                        <input id="suemail" name="Email" type="email" placeholder="" required />
+                    </label>
+                </li>
+                <li>
+                    <label class="km-required km-label-above">
+                        Your Password
+                        <input id="supassword" name="Password" type="password" placeholder="" required />
+                    </label>
+                </li>
+                <li>
+                    <div style="width:100%;">
+                        <a data-role="button" data-animated="true" data-click="signup" class="km-primary km-justified" style="background-color:green;border-color:green;">Sign Up</a>
+                    </div>
+                </li>
+            </ul>
+            <div style="margin-top:30px;">
+                <div style="width:100%;padding:0 10px;margin-top:10px;">
+                    <a data-role="button" data-animated="true" class="km-primary km-justified" data-bind="click: dataFromFacebook" style="background-color:#4862A3;border-color:#4862A3;">Facebook</a>
+                </div>
+                <div style="width:100%;padding:0 10px;margin-top:10px;">
+                    <a data-role="button" data-animated="true" class="km-primary km-justified"  data-bind="click: dataFromGoogle" style="background-color:#DD4B39;border-color:#DD4B39;">Google</a>
+                </div>
+                <div style="width:100%;padding:0 10px;margin-top:10px;">
+                    <a data-role="button" data-animated="true" class="km-primary km-justified"  data-bind="click: dataFromTwitter" style="background-color:#1DA1F2;border-color:#1DA1F2;">Twitter</a>
+                </div>
+            </div>-->
+            <div id="signupMessageError" class="k-animation-container" style="width:100%;height:100px;padding:0px;display:none;position:fixed;top:140px;z-index:10002;">
+                <div class="k-widget k-notification k-notification-error k-popup k-group k-reset k-state-border-up" data-role="alert"
+                     style="width:95%;display:block;text-align:left;margin:auto;font-size:12px;font-family:Arial,Helvetica,sans-serif;
+                 font-stretch:normal;font-style:normal;font-weight:normal;line-height:normal;opacity: 1;border:2px solid #E80C0C;border-radius:16px;">
+                    <div class="wrong-pass">
+                        <img src="http://demos.telerik.com/kendo-ui/content/web/notification/error-icon.png">
+                        <h3>Error</h3>
+                        <span style="display:block;float:right;width:82%;margin-top:-20px;"></span>
+                    </div>
+                </div>
+            </div>
+            <!--<div id="signupMessageError" class="k-animation-container" style="width: 100%; height: 100px;padding: 0px;display:none; position: fixed; top: 10px; z-index: 10002;">
+                <div class="k-widget k-notification k-notification-error k-popup k-group k-reset k-state-border-up" data-role="alert" style="width:300px;display: block; margin: auto; font-size: 12px; font-family: Arial, Helvetica, sans-serif; font-stretch: normal; font-style: normal; font-weight: normal; line-height: normal; opacity: 1;">
+                    <div class="wrong-pass">
+                        <img src="http://demos.telerik.com/kendo-ui/content/web/notification/error-icon.png">
+                        <h3>Error</h3>
+                        <span></span>
+                    </div>
+                </div>
+            </div>-->
+        </form>
+    </div>
+</div>

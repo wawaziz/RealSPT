@@ -1,0 +1,20 @@
+<div data-role="view" id="messages" data-title="Messages" data-layout="main" data-model="app.messages" data-init="app.messages.onInit" data-show="app.messages.onShow" data-after-show="app.messages.afterShow">
+    <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+    <ul id="notifications-listview" data-role="listview" data-style="inset" data-type="group">
+    </ul>
+</div>
+<script type="text/x-kendo-tmpl" id="notifications-listview-template">
+    <div>
+        <img src="#=icon#" alt="#=title# image" class="km-thumbnail" style="border-radius:0%;border:0px;" />
+       <span class="name">        
+        #:title# by 
+        #:firstname# #:lastname#        
+        <i class="fa fa-check fa-2x status checked"></i>
+        <i class="fa fa-paper-plane fa-2x status sent"></i>
+        </span>
+    </div>
+</script>

@@ -1,0 +1,27 @@
+<div data-role="view" data-title="Invite" data-layout="main" data-model="app.invite" data-init="app.invite.onInit" data-show="app.invite.onShow" data-after-show="app.invite.afterShow">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a id="back-button" class="nav-button" data-align="left" data-role="backbutton">Back</a>
+            <span data-role="view-title"></span>
+            <a href="components/home/myactivities.html" class="nav-button" data-align="right" data-role="button" data-click="finishNewActivity">Finish</a>
+        </div>
+    </header>
+    <ul id="attendees-listview" class="attendees-ul"></ul>
+</div>
+<script type="text/x-kendo-tmpl" id="attendees-listview-template">
+    <div id="#=ac_id#">
+        <img src="#=photo#" alt="#=firstname# image" class="km-thumbnail" />
+        <span class="name">        
+        #:firstname# #:lastname#        
+        #if(parseInt(status)==1) {#
+        <i class="fa fa-check fa-2x status checked status_#=ac_id#"></i>
+        #}if(parseInt(status)==0) {#
+        <i class="fa fa-paper-plane fa-2x status sent status_#=ac_id#"></i>
+        #} if(parseInt(status)==2) {#
+        <i class="fa fa-bolt fa-2x status denied status_#=ac_id#"></i>
+        #}#
+        <i id="status_#=ac_id#"></i>
+    </span>
+        <span class="city">#:city#</span>
+    </div>
+</script>

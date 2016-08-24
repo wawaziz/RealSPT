@@ -1,0 +1,120 @@
+<div data-role="view" data-title="New" data-layout="main" data-model="app.new" data-init="app.new.onInit" data-show="app.new.onShow" data-after-show="app.new.afterShow">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a onclick="history.back();" class="nav-button" data-align="left" data-role="button" >Cancel</a>
+            <span data-role="view-title"></span>
+            <a href="components/home/sporttype.html" class="nav-button" data-align="right" data-role="button" id="buttonAddNewStepOne">Next</a>
+        </div>
+    </header>
+        <form id="formNewActivity">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-font fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                <input class="form-control" id="title" type="text" data-bind="value: title" placeholder="Title" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-calendar  fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                <input class="form-control" id="starttime" type="datetime-local" data-bind="value: starttime" placeholder="Start Time" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-calendar  fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                <input class="form-control" id="endtime" type="datetime-local" data-bind="value: endtime" placeholder="End Time" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                <input class="form-control" id="address" onFocus="geolocate()" type="text" data-bind="value: address" placeholder="Location" required />
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-users fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                <input class="form-control" id="participants" type="number" data-bind="value: participants" placeholder="Number of participants" required>
+            </div>
+            <fieldset style="margin-top:20px;">
+                <legend>Description</legend>
+                <textarea id="description" style="height:80px;" data-bind="value: description" placeholder="Activity description"> </textarea>
+            </fieldset>
+            <div class="input-group" style="margin-bottom:20px;">
+                <span>Private </span>
+                <input id="privateactivity" style="float:right;" type="checkbox" data-role="switch" data-bind="checked: privateactivity" />
+            </div>
+        </form>
+        <!--<form id="formNewActivity">
+
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label class="km-required km-label-above">
+                        Title
+                        <input id="title" type="text" placeholder="" data-bind="value: title" required />
+                    </label>
+                </li>
+                <li>
+                    <label class="km-required km-label-above">
+                        Start time
+                        <input id="starttime" type="datetime-local" data-bind="value: starttime" placeholder="" required />
+                    </label>
+                </li>
+                <li>
+                    <label class="km-required km-label-above">
+                        End Time
+                        <input id="endtime" type="datetime-local" data-bind="value: endtime" placeholder="" required />
+                    </label>
+                </li>
+                <li>
+                    <label class="km-required km-label-above">
+                        Address
+                        <input id="address" onFocus="geolocate()" type="text" data-bind="value: address" placeholder="" required />
+                    </label>
+                </li>
+                <li>
+                    <label class="km-required km-label-above">
+                        Number of participants
+                        <input id="participants" type="number" data-bind="value: participants" placeholder="" required />
+                    </label>
+                </li>
+                <li>
+                    <label class="km-label-above">
+                        Description
+                        <textarea id="description" style="height: 65px;left:-5px;" data-bind="value: description" placeholder=""> </textarea>
+                    </label>
+                </li>
+                <li>
+                    <label class="km-label-above">
+                        Private
+                        <input id="privateactivity" type="checkbox" data-role="switch" data-bind="checked: privateactivity" />
+                    </label>
+                </li>
+            </ul>
+        </form>-->
+        <script>
+            var placeSearch, autocomplete;
+
+            function initAutocomplete() {
+                // Create the autocomplete object, restricting the search to geographical
+                // location types.
+                autocomplete = new google.maps.places.Autocomplete(
+                    /** @type {!HTMLInputElement} */(document.getElementById('address')),
+                    { types: ['geocode'] });
+            }
+
+            // [START region_geolocation]
+            // Bias the autocomplete object to the user's geographical location,
+            // as supplied by the browser's 'navigator.geolocation' object.
+            function geolocate() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        var geolocation = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+                        var circle = new google.maps.Circle({
+                            center: geolocation,
+                            radius: position.coords.accuracy
+                        });
+                        autocomplete.setBounds(circle.getBounds());
+                    });
+                }
+            }
+            // [END region_geolocation]
+
+        </script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA0Gzt0pSucL8gbm_Mjr9_3II5QqhPwGFg&signed_in=true&libraries=places&language=en&callback=initAutocomplete" 
+                async defer></script>
+</div>

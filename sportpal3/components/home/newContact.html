@@ -1,0 +1,114 @@
+<div data-role="view" data-title="Invite" data-layout="main" data-model="app.newcontact" data-init="app.newcontact.onInit" data-show="app.newcontact.onShow" data-after-show="app.newcontact.afterShow">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a onclick="history.back();" class="nav-button" data-align="left" data-role="button"><i class="fa fa-chevron-left fa-lg" aria-hidden="true"></i>  BACK</a>
+            <span data-role="view-title"></span>
+            <!--<a href="components/home/contacts.html" id="buttonSendNewContact" class="nav-button" data-align="right" data-role="button" data-click="saveNewContact">Send</a>-->
+            <!--href="components/home/contacts.html"-->
+        </div>
+    </header>
+    <div class="container">
+        <ul class="nav nav-tabs" style="width:90%;margin:0 auto;">
+            <li class="active"><a data-toggle="tab" href="#home">Invite</a></li>
+            <li><a data-toggle="tab" href="#menu1">Phone</a></li>
+            <li><a data-toggle="tab" href="#menu2">Social</a></li>
+        </ul>
+
+        <div class="tab-content" style="width:90%;margin:0 auto;">
+            <div id="home" class="tab-pane fade in active">
+                <br>
+                <h3 style="text-align:center;">Invite a contact</h3>
+                <form id="formNewContact">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                        <input class="form-control" id="ncfirstname" type="text" placeholder="Full name">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                        <input class="form-control" id="ncemail" type="email" placeholder="Email address">
+                    </div>
+                    <div class="input-group" style="margin-bottom:20px;">
+                        <span class="input-group-addon"><i class="fa fa-phone fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                        <input class="form-control" id="ncphone" type="tel" placeholder="Phone number">
+                    </div>
+                    <fieldset>
+                        <legend style="font-size:16px;">Message</legend>
+                        <textarea id="ncmessage" style="height:120px;" data-bind="value: bio" placeholder="Your message here"> </textarea>
+                    </fieldset>
+                    <!--<ul data-role="listview" data-style="inset">
+            <li>
+                <label class="km-label-above">
+                    First Name
+                    <input id="ncfirstname" type="text" placeholder="" />
+                </label>
+            </li>
+            <li>
+                <label class="km-label-above">
+                    Email Address
+                    <input id="ncemail" type="email" placeholder="" />
+                </label>
+            </li>
+            <li>
+                <label class="km-required km-label-above">
+                    Phone number
+                    <input id="ncphone" type="tel" placeholder="" required />
+                </label>
+            </li>
+            <li>
+                <label class="km-label-above">
+                    Message
+                    <textarea id="ncmessage" style="height: 65px;left:-5px;" placeholder=""> </textarea>
+                </label>
+            </li>
+        </ul>-->
+                    <!--<div id="newContactMessageError" class="k-animation-container" style="width: 100%; height: 100px;padding: 0px;display:none; position: fixed; top: 10px; z-index: 10002;">
+            <div class="k-widget k-notification k-notification-error k-popup k-group k-reset k-state-border-up" data-role="alert" style="width:300px;display: block; margin: auto; font-size: 12px; font-family: Arial, Helvetica, sans-serif; font-stretch: normal; font-style: normal; font-weight: normal; line-height: normal; opacity: 1;">
+                <div class="wrong-pass">
+                    <img src="http://demos.telerik.com/kendo-ui/content/web/notification/error-icon.png">
+                    <h3>Error</h3>
+                    <span>This contact is already invited. Please check Mobile phone and Email Address</span>
+                </div>
+            </div>
+        </div>-->
+                    <div id="newContactMessageError" class="k-animation-container" style="width:100%;height:100px;padding:0px;display:none;position:fixed;top:10px;z-index:10002;">
+                        <div class="k-widget k-notification k-notification-error k-popup k-group k-reset k-state-border-up" data-role="alert"
+                             style="width:95%;display:block;text-align:left;margin:auto;font-size:12px;font-family:Arial,Helvetica,sans-serif;
+                 font-stretch:normal;font-style:normal;font-weight:normal;line-height:normal;opacity: 1;border:2px solid #E80C0C;border-radius:16px;">
+                            <div class="wrong-pass">
+                                <img src="http://demos.telerik.com/kendo-ui/content/web/notification/error-icon.png">
+                                <h3>Error</h3>
+                                <span>This contact is already invited. Please check Mobile phone and Email Address</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div data-role="controlgroup" data-type="horizontal" style="text-align:center;margin-bottom:30px;">
+                    <a class="btn btn-default" id="buttonSendNewContact" style="border-color:#34A853;background-color:#34A853;width:85%;color:white;"
+                       href="components/home/contacts.html" data-role="button" data-animated="true" data-click="saveNewContact">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>  Send
+                    </a>
+                </div>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <br />
+                <br />
+                <div data-role="controlgroup" data-type="horizontal" style="text-align:center;margin-bottom:30px;">
+                    <a class="btn btn-default" id="buttonSendNewContact" style="border-color:#34A853;background-color:#34A853;width:85%;color:white;"
+                       href="components/home/contacts.html" data-role="button" data-animated="true" data-click="ContactsFromDevice">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>  Pick a contact
+                    </a>
+                </div>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+                <script src="scripts/signoauth.js"></script>
+                <br />
+                <br />
+                <div class="authSocial">
+                    <a data-role="button" data-click="FriendsFromFacebook" class="btn btn-block btn-social btn-facebook" style="background-color:#3B5998;color:white;width:85%;">
+                        <span class="fa fa-facebook"></span> Facebook
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div data-role="view" id="viewProfile" data-title="Profile" data-layout="main" data-model="app.profile" data-init="app.profile.onInit" data-show="app.profile.onShow" data-after-show="app.profile.afterShow">
+    <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+            <a href="components/home/updateProfile.html" class="nav-button" data-align="right" data-role="button" >Update</a>
+            <!--<a href="components/home/search.html" class="nav-button" data-align="right" data-role="button" data-click="updateProfile">Update</a>-->
+        </div>
+    </header>
+    <div id="profile">
+        <div style="padding-top:10px;background:linear-gradient(#009FE3,#fff);">
+            <img data-bind="attr: { src: photo, alt: fullname, title: fullname }" class="km-thumbnail"
+                 style="width: 7em; height: 7em; margin: 1em auto;display: block; float: none;" />
+            <!--<div data-bind="css :{showcolor: showcolor}"  class="km-thumbnail" style="width: 7em; height: 7em; margin: 1em auto; display: none; float: none;background-color:#24D666">AB</div>-->
+        </div>
+        <div style="font-size:20px;margin: 0 auto; text-align:center;margin-bottom:20px;">
+            <span style="font-size:26px;" data-bind="text: fullname"></span> <br />
+            <div style="color:#009FE3">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span style="font-size:16px;" data-bind="text: city"></span>
+            </div>
+        </div>
+        <ul style="font-size:18px;list-style-type:none;margin:0 auto;width:80%;">
+            <li>
+                <span>Email address: </span>
+                <span style="color:#009FE3;font-size:14px;" data-bind="text: email"></span>
+            </li>
+            <li>
+                <span>Phone number: </span>
+                <span style="color:#009FE3;font-size:14px;" data-bind="text: mobile"></span>
+            </li>
+            <li>
+                <span>Birthday: </span>
+                <!--<input style="color:#009FE3;font-size:16px;width:120px;border:none;" data-bind="value: birthday" readonly>-->
+                <span style="color:#009FE3;font-size:14px;" data-bind="text: birthdayText"></span>
+            </li>
+            <li style="border-style: none;">
+                <span>Bio: </span> <br />
+                <textarea style="height:120px;width:100%;color:#009FE3;font-size:14px;" data-bind="value: bio" readonly> </textarea>
+            </li>
+        </ul>
+        
+
+        <div data-role="controlgroup" data-type="horizontal" style="text-align:center;margin-top:25px;margin-bottom:25px;">
+            <a class="btn btn-default" id="buttonLogout" style="background-color:#D44E50;width:80%;color:white;"
+               data-role="button" data-animated="true" data-click="logout">
+                <i class="fa fa-sign-out " aria-hidden="true"></i>  Log Out
+            </a>
+        </div>
+    </div>
+</div>

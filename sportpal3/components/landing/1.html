@@ -1,0 +1,58 @@
+<script src="scripts/signoauth.js"></script>
+<!--<script>
+    document.addEventListener('deviceready', function() {
+        StatusBar.overlaysWebView(true);
+        StatusBar.backgroundColorByHexString('#000000');
+        StatusBar.styleDefault();
+    }, false);
+    document.addEventListener('click', function () {
+        StatusBar.overlaysWebView(false);
+        StatusBar.backgroundColorByHexString('#009FE3');
+        StatusBar.styleLightContent();
+    }, false);
+</script>-->
+<div data-role="view" data-stretch="true" id="home" data-content-height="100%" data-pager-overlay="true" data-title="SportPal">
+    <div class="photo" data-role="page">
+        <div style="position:fixed;top:40px;width:100%;text-align:center;">
+            <img src="images/logo.png" style="width:100px;height:100px;padding:10px;" />
+            <span style="display:block;text-align:center;font-size:24px;text-transform: uppercase;line-height:30px;color:#fff;"> SportPal</span>
+            <span style="display:block;text-align:center;font-size:20px;line-height:50px;color:#fff;">Be the Master of the Game</span>
+        </div>
+        <div style="position:fixed;left:0;bottom:15px;width:100%;padding:0 10px;width:50%;">
+            <a href="components/landing/signup.html" data-role="button" data-animated="true" class="km-primary km-justified" style="">Sign Up</a>
+        </div>
+        <div style="position:fixed;right:0;bottom:15px;width:100%;padding:0 10px;width:50%;">
+            <a href="components/landing/signin.html" data-role="button" data-animated="true" class="km-primary km-justified" style="background-color:green;border-color:green;">Sign In</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    #home .photo {
+        display: inline-block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url("https://www.sportpal.io/assets/img/landing/photo.png");
+    }
+    /*@media screen and (max-width:1090px) {
+        #home .photo {
+            backrground-position-x: -600px;
+            background-image: url("https://www.sportpal.io/assets/img/landing/photo2_1200.jpeg");
+        }
+    }
+    @media screen and (max-width:760px) {
+        #home .photo {
+            backrground-position-x: -400px;
+            background-image: url("https://www.sportpal.io/assets/img/landing/photo2_800.jpeg");
+        }
+    }
+    @media screen and (max-width:480px) {
+        #home .photo {
+            backrground-position-x: -200px;
+            background-image: url("https://www.sportpal.io/assets/img/landing/photo2_500.jpeg");
+        }
+    }*/
+</style>
+
+

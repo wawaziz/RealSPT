@@ -1,0 +1,70 @@
+<div data-role="view" data-title="Edit" data-layout="main" data-model="app.editActivity" data-init="app.editActivity.onInit" data-show="app.editActivity.onShow" data-after-show="app.editActivity.afterShow">
+    <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+            <a href="components/home/sporttype.html" class="nav-button" data-align="right" data-role="button" data-click="retrieveCity" id="buttonEditActivityStepOne">Next</a>
+        </div>
+    </header>
+    <form id="formEditActivity">
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label class="km-required km-label-above">
+                    Title
+                    <input id="title" type="text" placeholder="" data-bind="value: title" required />
+                </label>
+            </li>
+            <li>
+                <label class="km-required km-label-above">
+                    Start time
+                    <input id="starttime" type="datetime-local" data-bind="value: starttime" placeholder="" required />
+                </label>
+            </li>
+            <li>
+                <label class="km-required km-label-above">
+                    End Time
+                    <input id="endtime" type="datetime-local" data-bind="value: endtime" placeholder="" required />
+                </label>
+            </li>
+            <li>
+                <label class="km-required km-label-above">
+                    Address
+                    <input id="address" type="text" data-bind="value: address" placeholder="" required />
+                </label>
+            </li>
+            <li>
+                <label class="km-required km-label-above">
+                    Number of participants
+                    <input id="participants" type="number" data-bind="value: participants" placeholder="" required />
+                </label>
+            </li>
+            <li>
+                <label class="km-label-above">
+                    Description
+                    <textarea id="description" style="height: 65px;left:-5px;" data-bind="value: description" placeholder=""> </textarea>
+                </label>
+            </li>
+            <li>
+                <label class="km-label-above">
+                    Private
+                    <input id="privateactivity" type="checkbox" data-role="switch" />
+                </label>
+            </li>
+        </ul>
+    </form>
+    <div id="addActivityMessageSuccess" class="k-animation-container" style="width: 100%; height: 100px;padding: 0px; display: none; position: fixed; top: 30px; z-index: 10002;">
+        <div class="k-widget k-notification k-notification-upload-success k-popup k-group k-reset k-state-border-up" data-role="alert" style="width:300px;display: block; margin: auto; font-size: 12px; font-family: Arial, Helvetica, sans-serif; font-stretch: normal; font-style: normal; font-weight: normal; line-height: normal; opacity: 1;">
+            <div class="upload-success">
+                <img src="http://demos.telerik.com/kendo-ui/content/web/notification/success-icon.png">
+                <h3>Create Successful</h3>
+            </div>
+        </div>
+    </div>
+    <div id="addActivityMessageError" class="k-animation-container" style="width: 100%; height: 100px;padding: 0px; display: none; position: fixed; top: 30px; z-index: 10002;">
+        <div class="k-widget k-notification k-notification-error k-popup k-group k-reset k-state-border-up" data-role="alert" style="width:300px;display: block; margin: auto; font-size: 12px; font-family: Arial, Helvetica, sans-serif; font-stretch: normal; font-style: normal; font-weight: normal; line-height: normal; opacity: 1;">
+            <div class="wrong-pass">
+                <img src="http://demos.telerik.com/kendo-ui/content/web/notification/error-icon.png">
+                <h3>Field missing</h3>
+            </div>
+        </div>
+    </div>
+</div>

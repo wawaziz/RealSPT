@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet">
+    <link href="kendo/styles/kendo.default.min.css" rel="stylesheet">
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="cordova.js"></script>
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/sha512.js"></script>
+    <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="scripts/assets/oauth.js"></script>
+    <script src="app.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA0Gzt0pSucL8gbm_Mjr9_3II5QqhPwGFg&language=en"></script>
+
+    <!-- Push notifs sdk -->
+    <script src="https://bs-static.cdn.telerik.com/1.6.12/everlive.all.min.js"></script>
+
+</head>
+
+<body id="kendoUiMobileApp">
+
+    <script src="scripts/home.js"></script>
+    <script src="scripts/init.js"></script>
+    <script src="scripts/functions.js"></script>
+    <div data-role="layout" data-id="main">
+        <header data-role="header" >
+            <div style="height:20px;">
+            </div>
+            <div data-role="navbar" >
+                <span data-role="view-title"></span>
+            </div>
+        </header>
+        <nav class="main-nav">
+            <ol class="secondary">
+                <li style="margin-bottom:15px;">
+                    <div>
+                        <section class="content-section content-section--signup ">
+                            <div class="signup-submit">
+                                <a href="<?php echo base_url();?>signup" class="cta-button js-ripple-button signup" style="margin-top:5px;padding: 4px 12px;">Sign up <span style="font-size:12px">(FREE)</span></a>
+                            </div>
+                        </section>
+                        <div style="clear:both;"></div>
+                    </div>
+                </li>
+                <li><a href="<?php echo base_url();?>">Sportpal</a></li>
+            </ol>
+        </nav>
+        <!-- application views will be rendered here -->
+        <footer data-role="footer">
+            <div data-role="tabstrip" id="navigation-container">
+                <a href="components/home/search.html" data-icon="home">Home</a>
+                <a href="components/home/myactivities.html" data-icon="toprated">My games</a>
+                <a href="components/home/message.html" data-badge="0" data-icon="message">Messages</a>
+                <a href="components/home/contacts.html" data-icon="contacts">Contacts</a>
+                <a href="components/home/profile.html" data-icon="settings">My profile</a>
+            </div>
+        </footer>
+    </div>
+    <div data-role="layout" data-id="main-nonav">
+        <header data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+            </div>
+        </header>
+        <!-- application views will be rendered here -->
+        <footer data-role="footer"></footer>
+    </div>
+</body>
+</html>

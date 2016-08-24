@@ -1,0 +1,140 @@
+<div data-role="view" data-title="Update Profile" data-layout="main" data-model="app.updateProfile" data-init="app.updateProfile.onInit" data-show="app.updateProfile.onShow" data-after-show="app.updateProfile.afterShow">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a onclick="history.back();" class="nav-button" data-align="left" data-role="button" ><i class="fa fa-chevron-left fa-lg" aria-hidden="true"></i>  BACK</a>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+    <div id="updateProfile">
+        <form id="formProfile">
+            <div>
+                <img id="profilepic" data-bind="attr: { src: photo, alt: fullname, title: fullname }" class="km-thumbnail" 
+                     style="width: 7em; height: 7em; margin: 1em auto; margin-top: -20px;display: block; float: none;" />
+                <!--<div data-bind="css :{showcolor: showcolor}"  class="km-thumbnail" style="width: 7em; height: 7em; margin: 1em auto; display: none; float: none;background-color:#24D666">AB</div>-->
+            </div>
+            <!--<div data-role="controlgroup" data-type="horizontal" style="text-align:center;margin-bottom:30px;">
+                <a class="btn btn-default" style="border-color:#34A853;background-color:#34A853;width:40%;color:white;"
+                    data-role="button" data-animated="true" data-click="updateProfilePicture">
+                    <i class="fa fa-file-image-o" aria-hidden="true"></i>  Change photo
+                </a>
+            </div>-->
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                <input class="form-control" id="pfullname" type="text" data-bind="value: fullname" placeholder="Your Full Name" required />
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                <input class="form-control" id="pemail" type="email" data-bind="value: email" placeholder="Your Email" required />
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                <input class="form-control" id="ppassword" type="password" value="_Frr98klOI_345" placeholder="Your Password" required />
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-phone fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                <input class="form-control" id="pmobile" type="tel" data-bind="value: mobile" placeholder="Your Phone" required />
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+                <input class="form-control" id="pbirthday" type="date" style="width:100%;" data-bind="value: birthday" placeholder="Your Birthday" />
+            </div>
+            <div class="input-group" style="margin-bottom:20px;">
+                <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"><span style="color:#D44E50;"> *</span></i></span>
+                <input class="form-control" id="pcity" onFocus="geolocate()" type="text" data-bind="value: city" placeholder="Your City" required />
+            </div>
+            <fieldset>
+                <legend>Bio</legend>
+                <textarea id="pbio" style="height:120px;" data-bind="value: bio" placeholder="Your Bio"> </textarea>
+            </fieldset>
+        <!--<ul data-role="listview" data-style="inset">
+            <li>
+                <label class="km-required km-label-above">
+                    Full Name
+                    <input id="pfullname" type="text" data-bind="value: fullname" placeholder="Your Full Name" required />
+                </label>
+            </li>
+            <li>
+                <label class="km-required km-label-above">
+                    Email
+                    <input id="pemail" type="email" data-bind="value: email" placeholder="Your Email" required />
+                </label>
+            </li>
+            <li>
+                <label class="km-required km-label-above">
+                    Phone
+                    <input id="pmobile" type="tel" data-bind="value: mobile" placeholder="Your Phone" required />
+                </label>
+            </li>
+            <li>
+                <label class="km-label-above">
+                    Password
+                    <input id="ppassword" type="password" value="_Frr98klOI_345" placeholder="Your Phone" required />
+                </label>
+            </li>
+            <li>
+                <label class="km-label-above">
+                    Birthday
+                    <input id="pbirthday" type="date" data-bind="value: birthday" placeholder="Your Birthday" />
+                </label>
+            </li>
+            <li>
+                <label class="km-required km-label-above">
+                    City
+                    <input id="pcity" type="text" data-bind="value: city" placeholder="Your City" required />
+                </label>
+            </li>
+            <li>
+                <fieldset>
+                    <legend>Bio</legend>
+                    <textarea id="pbio" style="height: 65px;" data-bind="value: bio" placeholder="Your Bio"> </textarea>
+                </fieldset>
+            </li>
+            <li>
+
+                    <a data-role="button" data-animated="true" class="km-primary km-justified" data-click="logout" style="background-color:#2C2F42;border-color:#2C2F42;">Log out</a>
+                </div>
+            </li>
+        </ul>-->
+        </form>
+        <div data-role="controlgroup" data-type="horizontal" style="text-align:center;margin-bottom:30px;">
+            <a class="btn btn-default" style="border-color:#34A853;background-color:#34A853;width:85%;color:white;"
+               href="components/home/profile.html" data-role="button" data-animated="true" data-click="updateProfile">
+                <i class="fa fa-pencil" aria-hidden="true"></i>  Update
+            </a>
+        </div>
+    </div>
+    <script>
+            var placeSearch, autocomplete;
+
+            function initAutocomplete() {
+                // Create the autocomplete object, restricting the search to geographical
+                // location types.
+                autocomplete = new google.maps.places.Autocomplete(
+                    /** @type {!HTMLInputElement} */(document.getElementById('pcity')),
+                    { types: ['(cities)'] });
+            }
+
+            // [START region_geolocation]
+            // Bias the autocomplete object to the user's geographical location,
+            // as supplied by the browser's 'navigator.geolocation' object.
+            function geolocate() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        var geolocation = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+                        var circle = new google.maps.Circle({
+                            center: geolocation,
+                            radius: position.coords.accuracy
+                        });
+                        autocomplete.setBounds(circle.getBounds());
+                    });
+                }
+            }
+            // [END region_geolocation]
+
+        </script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA0Gzt0pSucL8gbm_Mjr9_3II5QqhPwGFg&signed_in=true&libraries=places&language=en&callback=initAutocomplete" 
+                async defer></script>
+</div>

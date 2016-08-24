@@ -1,0 +1,69 @@
+{
+  "ProjectName": "sportpal3",
+  "ProjectGuid": "6c5d671b-b465-491d-bc7d-6922b2b00e32",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.sportpal",
+  "DisplayName": "sportpal",
+  "Author": "",
+  "Description": "sportpal",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "4.0.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "true",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{bae5d4c2-2bd2-4095-bc59-061243dac6f9}",
+  "WP8ProductID": "{2273fc0d-ccb3-44a2-904d-5a284166156a}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.sportpal",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ],
+  "CorePlugins": [
+    "com.phonegap.plugins.PushPlugin@3.2.0",
+    "com.synconset.imagepicker@2.1.3",
+    "cordova-plugin-battery-status",
+    "cordova-plugin-camera",
+    "cordova-plugin-console",
+    "cordova-plugin-contacts",
+    "cordova-plugin-device",
+    "cordova-plugin-device-motion",
+    "cordova-plugin-device-orientation",
+    "cordova-plugin-dialogs",
+    "cordova-plugin-file",
+    "cordova-plugin-file-transfer",
+    "cordova-plugin-geolocation",
+    "cordova-plugin-globalization",
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-media",
+    "cordova-plugin-media-capture",
+    "cordova-plugin-network-information",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-vibration",
+    "cordova-plugin-whitelist"
+  ]
+}

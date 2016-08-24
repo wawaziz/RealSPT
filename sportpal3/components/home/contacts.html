@@ -1,0 +1,15 @@
+<div data-role="view" data-title="Contacts" data-layout="main" data-model="app.contacts" data-init="app.contacts.onInit" data-show="app.contacts.onShow" data-after-show="app.contacts.afterShow">
+    <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+            <a href="components/home/newContact.html" class="nav-button" data-align="right" data-icon="plus" data-role="button"></a>            
+        </div>
+    </header>
+    <ul id="contacts-listview"></ul>
+</div>
+
+<script type="text/x-kendo-tmpl" id="contacts-listview-template">
+    <img src="#=photo#" alt="#=firstname# image" class="km-thumbnail" />
+    <span style="font-size:12px;display:block;color:gray;font-weight:bold;">#:firstname# #:lastname#</span>
+    <span style="font-size:12px;color:rgba(37, 154, 218, 0.76);">#:city#</span>        
+</script>

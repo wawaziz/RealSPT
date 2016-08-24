@@ -1,0 +1,72 @@
+<div data-role="view" data-title="New" data-layout="main" data-model="app.new" data-show="app.new.onShow" data-after-show="app.new.afterShow">
+    <form>
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label class="km-required km-label-above">
+                    Title
+                    <input value="" type="text" placeholder="Title" />
+                </label>
+            </li>
+            <li>
+                <label class="km-label-above">
+                    Start time
+                    <input type="datetime-local" placeholder="Your Last Name" />
+                </label>
+            </li>
+            <li>
+                <label class="km-label-above">
+                    End Time
+                    <input type="datetime-local" placeholder="Your Email" />
+                </label>
+            </li>
+            <li>
+                <label class="km-label-above">
+                    Location
+                    <input type="text" placeholder="Your Birthday" />
+                </label>
+            </li>
+            <li>
+                <label class="km-label-above">
+                    Sport Type
+                    <select id="location">
+                        <option value="First Option">Tennis</option>
+                        <option value="Second Option">Football</option>
+                        <option value="Third Option">Kayak</option>
+                    </select>
+                </label>
+            </li>
+            <li>
+                <fieldset>
+                    <legend>Bio</legend>
+                    <textarea style="height: 100px;" placeholder="Your Bio"> </textarea>
+                </fieldset>
+            </li>
+            <li>
+                <h2 style="padding:7px;float:left;margin:0 15px 0 0;font-size:14px;">
+                    <span> Private </span>
+                </h2>
+                <input id="privateactivity" />
+            </li>
+            <li>
+                <label class="km-label-above">
+                    Invite your contacts
+                    <input type="text" placeholder="" />
+                </label>
+            </li>
+            <li>
+                <fieldset style="text-align:center;">
+                    <a href="https://realdevsporty.appspot.com/auth_oa2/session/facebook">
+                        <i class="fa fa-facebook-square fa-3x"></i>
+                    </a>
+                    <a href="https://realdevmobile.appspot.com/auth_oa2/session/google">
+                        <i class="fa fa-google-plus-square fa-3x"></i>
+                    </a>
+                    <a href="https://realdevmobile.appspot.com/auth_oa2/session/google">
+                        <i class="fa fa-twitter-square fa-3x"></i>
+                    </a>
+                </fieldset>
+            </li>
+        </ul>
+    </form>
+</div>
+

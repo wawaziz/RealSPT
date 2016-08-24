@@ -1,0 +1,64 @@
+<div data-role="view" id="myactivities" data-title="MY GAMES" data-layout="main" data-model="app.myactivities" data-init="app.myactivities.onInit" data-show="app.myactivities.onShow" data-after-show="app.myactivities.afterShow" data-reload="true">
+    <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+            <a href="components/home/new.html" class="nav-button" data-align="right" data-icon="add" data-role="button"></a>
+        </div>
+        <div>
+            <ul id="select-period-mygames" data-role="buttongroup" data-select="onSelect" data-index="0">
+                <li id="upcoming">Upcoming</li>
+                <li id="past">Past</li>
+                <li id="favorites">Favorites</li>
+                <li id="myevents">My Events</li>
+            </ul>
+        </div>
+    </header>
+          
+    <ul id="filterable-listview"></ul>
+</div>
+
+<script type="text/x-kendo-tmpl" id="mobile-listview-filtering-template">
+    <a href='components/home/singleActivity.html?id=#:id#' data-role="listview-link" class="j-listview-item">
+        <!--
+        <div>
+            <img src="#=icon#" alt="#=title# image" class="km-thumbnail" style="border-radius:0%;border:0px;" />
+            <span style="font-size:12px;display:block;color:gray;font-weight:bold;line-height: 22px;">
+                <span style="font-weight:bold;">#:title#</span>
+                by
+                <span style="font-weight:normal;color:saddlebrown">#:firstname#  #:lastname#</span>
+                <span class="km-badge" style="top:25px;right:5em;font-size:11px;">#:participants-confirmedplaces#</span>
+            </span>
+            <span style="font-size:12px;color:rgba(37, 154, 218, 0.76);">#:city#, </span>
+            <span style="font-size:12px;color:gray;">#:kendo.toString(kendo.parseDate(starttime, "yyyy-MM-dd HH:mm:ss"), "MMM dd HH:mm")#</span>
+        </div>
+        -->
+        <div>
+            <img src="#=icon#" alt="#=title# image" class="km-thumbnail" style="border-radius:0%;border:0px;" />
+            <span style="display:block;color:rgba(15, 46, 51, 1);line-height: 22px;">
+                <span style="font-size:22px;">#:title#</span> <br />
+                <span style="font-size:16px;color:rgba(0, 159, 227, 1);">#:city#</span> <br />
+                <!--by <span style="font-weight:bold;color:rgba(60, 179, 113, 1);">#:firstname#  #:lastname#</span>-->
+            </span>
+            <img src="#=auphoto#" alt="#=firstname#  #=lastname# photo" class="km-thumbnail" style="display:block;float:left;height:30px;width:30px;" />
+            <br />
+            <hr />
+            <span style="display:block;color:rgba(15, 46, 51, 1);line-height: 22px;margin-bottom: 5px;margin-top:-8px;">
+                <i class="fa fa-calendar"></i><span style="font-size:18px;">
+                    #:kendo.toString(kendo.parseDate(starttime, "yyyy-MM-dd HH:mm:ss"), "MMM dd HH:mm")#
+                </span> <br />
+
+                <i class="fa fa-clock-o" aria-hidden="true"></i><span style="font-size:18px;">
+                    #:((kendo.parseDate(endtime, "yyyy-MM-dd HH:mm:ss") - kendo.parseDate(starttime, "yyyy-MM-dd HH:mm:ss"))/1000).toString().toHHMMSS().substr(0,5)#
+                </span> <br />
+                <span id="availableSpots" style="font-size:14px;">Available spots: #:participants-confirmedplaces#</span>
+            </span>
+            <div class="progress" style="display:block;color:rgba(15, 46, 51, 1);line-height: 16px;height:10px !important;margin-bottom:0px;">
+                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                     aria-valuenow="#:(confirmedplaces*100)/participants#" value="#:(confirmedplaces*100)/participants#"
+                     style="width:#:(confirmedplaces*100)/participants#%;background-color:rgba(0, 159, 227, 1);">
+                    <!--<span style="font-size:10px;font-weight:bold;vertical-align:top;">#:Math.round((confirmedplaces*100)/participants)#%</span>-->
+                </div>
+            </div>
+        </div>
+    </a>
+</script>

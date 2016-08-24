@@ -1,0 +1,24 @@
+#viewActivity .km-content,
+#messages .km-content,
+#myactivities .km-content,
+#search .km-content {
+    /*background-color: #f6f6f6;*/
+    background-color: white;
+}
+#search .km-scroll-container.km-listview-wrapper.km-filter-form.km-filter-wrap{
+    border-radius: 5px;
+    border: 1.5px solid #E1E1E1;
+}
+#myactivities .km-list li > .km-listview-link,
+#search .km-list li > .km-listview-link {
+    margin-left: 0px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding-left: 5px;
+    border: 1.5px solid #009FE3;
+}
+#myactivities .km-list > li,
+#search .km-list > li {
+    padding: 12px 20px 12px 10px !important;
+    border-style: none;
+}
