@@ -1,4 +1,5 @@
 function createuser(data) {
+
     $.ajax({
         url: "http://srv.sportpal.io/index.php/admin/createjsonp",
         dataType: 'jsonp',
