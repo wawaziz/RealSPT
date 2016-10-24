@@ -564,6 +564,7 @@ function FriendsFromFacebook() {
     });
 }
 function ContactsFromDevice() {
+    console.log(1);
     navigator.contacts.pickContact(function (contact) {
         //alert(JSON.stringify(contact));
         var firstname = JSON.stringify(contact.name.formatted);
